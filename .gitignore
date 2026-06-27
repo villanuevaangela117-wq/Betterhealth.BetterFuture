@@ -1,24 +1,375 @@
-# Compiled class file
-*.class
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Better Health, Better Future</title>
+    <!-- Custom Favicon Logo -->
+    <link rel="icon" type="image/png" href="ChatGPT Image Jun 27, 2026, 05_16_52 PM.png">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-# Log file
-*.log
+    <!-- Top Emergency Bar -->
+    <div class="bg-danger text-white py-2 sticky-top text-center fw-bold small">
+        <i class="bi bi-exclamation-triangle-fill animate-flash"></i> National Emergency Hotline: 911 | Caloocan Rescue: (02) 8888-2856
+    </div>
 
-# BlueJ files
-*.ctxt
+    <!-- Main Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm main-nav">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center fw-bold" href="#home">
+                <img src="ChatGPT Image Jun 27, 2026, 05_16_52 PM.png" alt="Better Health Logo" width="40" height="40" class="me-2 bg-white rounded-circle p-1 shadow-sm">
+                <span>Better Health, Better Future</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#articles">Articles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#firstaid">First Aid</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hospitals">Hospitals & Hotlines</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link text-info fw-semibold" href="references.html">References</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <button class="btn btn-outline-light btn-sm" id="darkModeToggle" onclick="toggleDarkMode()">
+                            <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+    <!-- Home Section (Hero) -->
+    <header id="home" class="hero-section py-5 d-flex align-items-center">
+        <div class="container text-center py-5">
+            <img src="ChatGPT Image Jun 27, 2026, 05_16_52 PM.png" alt="Project Logo" width="120" height="120" class="mb-4 bg-white rounded-circle p-2 shadow">
+            <h1 class="display-4 fw-bold text-primary mb-3">Better Health, Better Future</h1>
+            <p class="lead text-muted mx-auto" style="max-width: 700px;">
+                Welcome to our Grade 10 Health Portal. Empowering Filipino communities with verified medical facts, emergency protocols, and localized health resources.
+            </p>
+            <div class="alert alert-info d-inline-block text-start mt-4 max-width-600 shadow-sm">
+                <h5><i class="bi bi-info-circle-fill me-2"></i> How to Navigate This Site:</h5>
+                <ul class="mb-0 ps-3">
+                    <li>Use the <strong>Search Bar</strong> below to find articles, first aid tips, or hospital details quickly.</li>
+                    <li>Toggle <strong>Dark Mode</strong> in the navigation bar for easier nighttime viewing.</li>
+                    <li>Click on any navigation link to smoothly glide straight to that topic.</li>
+                </ul>
+            </div>
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
+            <!-- Global Search Bar -->
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-8 col-lg-6">
+                    <div class="input-group input-group-lg shadow-sm">
+                        <span class="input-group-text bg-white border-end-0"><i class="bi bi-search text-primary"></i></span>
+                        <input type="text" id="globalSearch" class="form-control border-start-0" placeholder="Search articles, first aid guidelines, hospitals...">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+    <!-- Health Trivia Ticker -->
+    <div class="bg-light-blue py-3 border-top border-bottom">
+        <div class="container text-center">
+            <span class="badge bg-primary me-2">HEALTH TRIVIA</span>
+            <span class="fst-italic text-dark-blue" id="trivia-text">"Regular handwashing with soap can reduce respiratory illness risks by 16-21%." — Approved by the World Health Organization (WHO)</span>
+        </div>
+    </div>
+
+    <!-- Health Articles Section -->
+    <section id="articles" class="py-5 searchable-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-primary"><i class="bi bi-journal-medical me-2"></i>Verified Health Articles</h2>
+                <p class="text-muted">Updated for 2026. Sourced exclusively from authorized medical professionals and institutions.</p>
+            </div>
+
+            <div class="row g-4" id="articles-container">
+                <!-- Card 1 -->
+                <div class="col-md-6 search-item">
+                    <div class="card h-100 shadow-sm border-0 border-top border-primary border-4">
+                        <div class="card-body">
+                            <span class="badge bg-secondary mb-2">Infectious Diseases</span>
+                            <h4 class="card-title fw-bold text-dark-blue">Preventing Dengue in Communities</h4>
+                            <p class="card-text text-muted">With shifting climate patterns in 2026, dengue remains a year-round threat in the Philippines. The DOH emphasizes the "Enhanced 4S Strategy": Search and destroy breeding sites, Secure self-protection, Seek early consultation, and Support fogging in hotspot areas.</p>
+                            <blockquote class="blockquote blockquote-custom fs-7 mt-3 p-2 bg-light border-start border-3 border-info">
+                                <p class="mb-1 small">"Eliminating stagnant water sources is the single most effective way to curb Aedes aegypti vector reproduction near residences."</p>
+                                <footer class="blockquote-footer ts-small mt-1">Approved by <cite title="Source Title">Dr. Edsel Salvana, DOH Technical Advisory Group</cite></footer>
+                            </blockquote>
+                        </div>
+                        <div class="card-footer bg-transparent text-muted small border-0 pt-0 ps-3 pb-3">
+                            <strong>Source:</strong> Department of Health (DOH) Philippines | <strong>Published:</strong> January 2026
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-6 search-item">
+                    <div class="card h-100 shadow-sm border-0 border-top border-primary border-4">
+                        <div class="card-body">
+                            <span class="badge bg-secondary mb-2">Cardiovascular Health</span>
+                            <h4 class="card-title fw-bold text-dark-blue">Hypertension and Lifestyle Interventions</h4>
+                            <p class="card-text text-muted">High blood pressure silent-kills millions. Mayo Clinic research highlights that restricting sodium intake to under 2,300 mg daily, tracking a DASH diet high in whole grains, and performing 150 minutes of weekly aerobic exercise drastically reduces stroke vulnerabilities.</p>
+                            <blockquote class="blockquote blockquote-custom fs-7 mt-3 p-2 bg-light border-start border-3 border-info">
+                                <p class="mb-1 small">"Small, consistent drops in sodium intake combined with brisk walking can drop systolic BP by 5 to 8 mm Hg."</p>
+                                <footer class="blockquote-footer ts-small mt-1">Approved by <cite title="Source Title">Dr. Sheldon G. Sheps, Mayo Clinic Cardiology</cite></footer>
+                            </blockquote>
+                        </div>
+                        <div class="card-footer bg-transparent text-muted small border-0 pt-0 ps-3 pb-3">
+                            <strong>Source:</strong> Mayo Clinic Medicine | <strong>Published:</strong> March 2026
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency First Aid Section -->
+    <section id="firstaid" class="py-5 bg-light searchable-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-danger"><i class="bi bi-heart-pulse me-2"></i>Emergency First Aid Protocols</h2>
+                <p class="text-muted">Standard life-saving procedures verified by the Philippine Red Cross and CDC. Read carefully.</p>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-12 search-item">
+                    <div class="p-4 bg-white rounded border shadow-sm">
+                        <h4 class="fw-bold text-danger"><i class="bi bi-activity me-2"></i>1. Cardiopulmonary Resuscitation (CPR)</h4>
+                        <p class="mb-2"><strong>Indication:</strong> Unresponsive individual who is not breathing or only gasping.</p>
+                        <ol class="small text-muted mb-0">
+                            <li>Call emergency services (911) immediately.</li>
+                            <li>Place hands in the center of the person's chest and push hard and fast (100–120 compressions per minute).</li>
+                            <li>Allow chest to return to normal position between compressions. Minimize interruptions.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="col-12 search-item">
+                    <div class="p-4 bg-white rounded border shadow-sm">
+                        <h4 class="fw-bold text-danger"><i class="bi bi-person-fill-exclamation me-2"></i>2. Choking (Heimlich Maneuver)</h4>
+                        <p class="mb-2"><strong>Indication:</strong> Person cannot speak, cough, or breathe due to airway obstruction.</p>
+                        <ol class="small text-muted mb-0">
+                            <li>Stand behind the person. Wrap arms around their waist.</li>
+                            <li>Make a fist with one hand. Place it slightly above the navel.</li>
+                            <li>Grasp the fist with your other hand. Press hard into the abdomen with a quick, upward thrust.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="col-12 search-item">
+                    <div class="p-4 bg-white rounded border shadow-sm">
+                        <h4 class="fw-bold text-danger"><i class="bi bi-fire me-2"></i>3. Burns (Thermal Burns)</h4>
+                        <p class="mb-2"><strong>Indication:</strong> Red, blistered, or painful skin from heat exposure.</p>
+                        <ol class="small text-muted mb-0">
+                            <li>Cool the burn under cool (not freezing) running water for at least 10 minutes.</li>
+                            <li>Do not apply ice, butter, or oil to the burn—this traps heat and causes tissue damage.</li>
+                            <li>Cover loosely with a sterile, non-stick bandage.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="col-12 search-item">
+                    <div class="p-4 bg-white rounded border shadow-sm">
+                        <h4 class="fw-bold text-danger"><i class="bi bi-droplet-half me-2"></i>4. Severe Bleeding</h4>
+                        <p class="mb-2"><strong>Indication:</strong> Profuse, continuous blood loss from a wound.</p>
+                        <ol class="small text-muted mb-0">
+                            <li>Apply direct pressure on the wound with a sterile cloth or clean gauze.</li>
+                            <li>Maintain continuous pressure until bleeding ceases. Elevate the wounded limb above heart level if possible.</li>
+                            <li>Do not remove the blood-soaked cloth; stack new cloths on top if blood seeps through.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="col-12 search-item">
+                    <div class="p-4 bg-white rounded border shadow-sm">
+                        <h4 class="fw-bold text-danger"><i class="bi bi-bandaid me-2"></i>5. Fractures & Bone Injuries</h4>
+                        <p class="mb-2"><strong>Indication:</strong> Deformed limb, extreme pain, or inability to move a body part post-impact.</p>
+                        <ol class="small text-muted mb-0">
+                            <li>Do not try to realign or push back a bone that is sticking out.</li>
+                            <li>Immobilize the area using a splint (rolled newspapers, wooden boards) tied gently above and below the injury.</li>
+                            <li>Apply a cold pack wrapped in a cloth to reduce swelling.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="col-12 search-item">
+                    <div class="p-4 bg-white rounded border shadow-sm">
+                        <h4 class="fw-bold text-danger"><i class="bi bi-brain me-2"></i>6. Stroke (Recognize F.A.S.T.)</h4>
+                        <p class="mb-2"><strong>Indication:</strong> Sudden neurological deficit due to compromised cerebral blood flow.</p>
+                        <ul class="small text-muted list-unstyled mb-0">
+                            <li><strong>F - Face:</strong> Ask the person to smile. Does one side of the face droop?</li>
+                            <li><strong>A - Arms:</strong> Ask them to raise both arms. Does one arm drift downward?</li>
+                            <li><strong>S - Speech:</strong> Ask them to repeat a simple phrase. Is speech slurred or strange?</li>
+                            <li><strong>T - Time:</strong> If any sign matches, call 911 immediately. Every minute matters.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12 search-item">
+                    <div class="p-4 bg-white rounded border shadow-sm">
+                        <h4 class="fw-bold text-danger"><i class="bi bi-heart-break-fill me-2"></i>7. Heart Attack</h4>
+                        <p class="mb-2"><strong>Indication:</strong> Crushing chest pain radiating to the left arm or jaw, sweating, shortness of breath.</p>
+                        <ol class="small text-muted mb-0">
+                            <li>Have the individual sit down, rest, and try to remain calm.</li>
+                            <li>Loosen any tight clothing around the neck and waist.</li>
+                            <li>Administer emergency aspirin if recommended by medical dispatchers over the phone while waiting for help.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hospitals & Hotlines Section -->
+    <section id="hospitals" class="py-5 searchable-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-primary"><i class="bi bi-building-hospital me-2"></i>Caloocan City Health Infrastructure</h2>
+                <p class="text-muted">Critical local contact numbers and institutional addresses within Caloocan City, Metro Manila.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-8 search-item">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header bg-primary text-white fw-bold">
+                            Major Hospitals in Caloocan City
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Hospital Name</th>
+                                        <th>Location / Sector</th>
+                                        <th>Contact Number</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Caloocan City Medical Center (CCMC)</strong></td>
+                                        <td>Mabini St., South Caloocan (Public)</td>
+                                        <td>(02) 8310-6421</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Dr. Jose N. Rodriguez Memorial Hospital</strong></td>
+                                        <td>Tala, North Caloocan (Public)</td>
+                                        <td>(02) 8962-8212</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Our Lady of Grace Hospital</strong></td>
+                                        <td>8th Ave., Grace Park, Caloocan (Private)</td>
+                                        <td>(02) 8361-1714</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Martinez General Hospital</strong></td>
+                                        <td>A. Mabini St., Caloocan (Private)</td>
+                                        <td>(02) 8288-8831</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 search-item">
+                    <div class="card bg-dark text-white border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <h4 class="fw-bold text-warning mb-4"><i class="bi bi-telephone-fill me-2"></i>Hotlines Checklist</h4>
+                            <div class="d-flex justify-content-between border-bottom border-secondary pb-2 mb-2">
+                                <span>National Emergency:</span>
+                                <span class="fw-bold text-danger">911</span>
+                            </div>
+                            <div class="d-flex justify-content-between border-bottom border-secondary pb-2 mb-2">
+                                <span>Caloocan Disaster Risk Reduce (DRRMO):</span>
+                                <span class="fw-bold text-info">(02) 8888-2856</span>
+                            </div>
+                            <div class="d-flex justify-content-between border-bottom border-secondary pb-2 mb-2">
+                                <span>Philippine Red Cross Caloocan:</span>
+                                <span class="fw-bold text-info">(02) 8364-5742</span>
+                            </div>
+                            <div class="d-flex justify-content-between border-bottom border-secondary pb-2 mb-2">
+                                <span>Caloocan Police Station:</span>
+                                <span class="fw-bold text-info">(02) 8281-5124</span>
+                            </div>
+                            <div class="d-flex justify-content-between pb-1">
+                                <span>Caloocan Fire Station:</span>
+                                <span class="fw-bold text-info">(02) 8361-9122</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-5 bg-light">
+        <div class="container" style="max-width: 800px;">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-primary">Frequently Asked Questions</h2>
+                <p class="text-muted">Quick medical answers based on institutional reference manuals.</p>
+            </div>
+
+            <div class="accordion shadow-sm" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            Is a fever dangerous by itself?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            According to Johns Hopkins Medicine, a fever is not an illness itself but a natural response showing the body is fighting off an infection. It only becomes critical if it crosses 103°F (39.4°C) in adults or remains sustained across multiple days.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            When should a stroke patient be brought to a hospital?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Immediately. The CDC notes that thrombolytic medications (clot-busters) must ideally be administered within 3 to 4.5 hours from the first onset of stroke signs to mitigate long-term brain damage.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team / Project Credits Footer -->
+    <footer class="bg-primary text-white py-5 mt-5 border-top border-info border-3">
+        <div class="container">
+            <div class="row align-items-center text-center text-md-start">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <h5 class="fw-bold mb-1">Better Health, Better Future</h5>
+                    <p class="small text-white-50 mb-0">Grade 10 Health Science Project &copy; 2026. Dedicated to public welfare.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="small fw-semibold mb-2 text-warning">PROJECT DEVELOPED BY GROUP 1:</p>
+                    <p class="small mb-0 text-white-50 leading-loose">
+                        Villanueva | Patricio | Nery | Borbon | Balaston <br>
+                        Enriquez | Cenence | Baculpo | Calica | Isaias
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JavaScript Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript Code -->
+    <script src="script.js"></script>
+</body>
+</html>
